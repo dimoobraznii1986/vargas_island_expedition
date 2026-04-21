@@ -446,6 +446,10 @@
           );
 
         map.fitBounds(L.latLngBounds(vargasRing).extend(tofinoCenter));
+
+        window.addEventListener("load", function () {
+          map.invalidateSize();
+        });
       })();
     </script>
   </body>
