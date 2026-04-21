@@ -296,11 +296,24 @@ section h3 {
   margin-bottom: 0.35rem;
 }
 
+.leaflet-control-attribution {
+  font-size: 11px;
+}
+
 #map {
   height: 420px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   margin-top: 1rem;
+}
+
+main section,
+#map-section {
+  scroll-margin-top: 5rem;
+}
+
+#top {
+  scroll-margin-top: 0;
 }
 
 .map-legend {
