@@ -1,0 +1,341 @@
+/* Vargas Island Expedition — companion site */
+:root {
+  --ink: #0c1a24;
+  --sea: #1a4d5c;
+  --foam: #e8f4f2;
+  --sand: #f4efe4;
+  --accent: #c45c26;
+  --muted: #4a6670;
+  --line: rgba(12, 26, 36, 0.12);
+  --radius: 12px;
+  --font: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-head: "Fraunces", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--sand);
+}
+
+a {
+  color: var(--sea);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--foam);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.site-header {
+  background: linear-gradient(160deg, var(--sea) 0%, #0f2d38 100%);
+  color: var(--foam);
+  padding: 0.75rem 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+
+.site-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.logo {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.hero {
+  background: linear-gradient(
+      180deg,
+      rgba(12, 26, 36, 0.55) 0%,
+      rgba(12, 26, 36, 0.75) 100%
+    ),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80")
+      center 35% / cover no-repeat;
+  color: #fff;
+  padding: 3.5rem 1.25rem 4rem;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  text-shadow: 0 1px 24px rgba(0, 0, 0, 0.35);
+}
+
+.hero .tagline {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin: 0 0 1.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #a34a1f;
+  color: #fff;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+section h2 {
+  font-family: var(--font-head);
+  font-size: 1.65rem;
+  color: var(--sea);
+  margin: 0 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 3px solid var(--line);
+}
+
+section h3 {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin: 1.5rem 0 0.5rem;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  box-shadow: 0 4px 24px rgba(12, 26, 36, 0.06);
+  border: 1px solid var(--line);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.meta-list li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-list li:last-child {
+  border-bottom: none;
+}
+
+.meta-list strong {
+  min-width: 7rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.callout {
+  background: var(--foam);
+  border-left: 4px solid var(--sea);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: 1.25rem 0;
+}
+
+.callout.warn {
+  border-left-color: var(--accent);
+  background: #fff8f2;
+}
+
+.resource-list {
+  padding-left: 1.25rem;
+}
+
+.resource-list li {
+  margin-bottom: 0.5rem;
+}
+
+.packing-section {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--line);
+}
+
+.packing-section h3 {
+  margin-top: 0;
+  color: var(--sea);
+}
+
+.packing-section ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.packing-section li {
+  margin-bottom: 0.35rem;
+}
+
+#map {
+  height: 420px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  margin-top: 1rem;
+}
+
+.map-legend {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+
+.site-footer {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.78);
+  padding: 2rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+.site-footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.site-footer a {
+  color: #9ec9d4;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: center;
+  }
+}
