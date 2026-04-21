@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Companion page for the June 2026 Vargas Island SUP expedition — trip details, packing list, resources, and map (Tofino BC)."
+      content="Companion page for the June 2026 Vargas Island SUP expedition — trip details, packing list, resources, and CHS chart 3673 preview (Tofino BC)."
     />
     <title>Vargas Island Expedition — June 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,12 +13,6 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -31,7 +25,7 @@
           <ul>
             <li><a href="#overview-heading">📖 About</a></li>
             <li><a href="#meet-heading">🎒 Trip &amp; packing</a></li>
-            <li><a href="#map-heading">🗺️ Map</a></li>
+            <li><a href="#chart-heading">🗺️ Chart 3673</a></li>
           </ul>
         </nav>
       </div>
@@ -210,7 +204,7 @@
         </div>
         <p class="map-legend">
           For driving and parking, use your map app with “Grice Park” or “Grice
-          Bay kayak” in Tofino. An orientation map is <a href="#map-heading">below</a>.
+          Bay kayak” in Tofino. Official chart preview is <a href="#chart-heading">below</a>.
         </p>
       </section>
 
@@ -349,20 +343,41 @@
         </p>
       </section>
 
-      <section id="map-section" aria-labelledby="map-heading">
-        <h2 id="map-heading">🗺️ Illustrative area map</h2>
+      <section id="chart-section" aria-labelledby="chart-heading">
+        <h2 id="chart-heading">🗺️ Chart 3673 — Clayoquot Sound</h2>
         <div class="callout warn">
-          <strong>⚠️ Not for navigation.</strong> The orange line is a rough sketch of
-          a possible circumnavigation when conditions allow. Your guide sets the
-          real route daily. Use official chart <strong>3673</strong> and on-water
-          judgment.
+          <strong>⚠️ Not for navigation.</strong> Fisheries and Oceans Canada states
+          that chart preview images are <em>representations of CHS products and should
+          not be used for navigation</em>. Use your printed chart, official digital
+          chart, and current <a href="https://www.notmar.gc.ca/corrections-en.php?chart-carte=3673">Notices
+          to Mariners</a> corrections. Your guide sets the route each day.
         </div>
-        <div id="map" role="region" aria-label="Map of Tofino and Vargas Island"></div>
-        <p class="map-legend">
-          Blue marker: approximate meeting area (Grice Park / downtown kayak access
-          zone). Green polygon: very simplified Vargas Island shoreline for context
-          only (not survey-accurate). Map data © OpenStreetMap contributors.
-        </p>
+        <figure class="chart-preview">
+          <a
+            href="https://www.charts.gc.ca/charts-cartes/charts-cartes-eng.asp?num=3673"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://www.charts.gc.ca/images/charts-cartes/chart-thumbnails/3673_1.png"
+              alt="Canadian Hydrographic Service chart 3673 preview — Clayoquot Sound, Tofino Inlet to Millar Channel"
+              width="681"
+              height="484"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <figcaption class="map-legend">
+            Preview image from the
+            <a
+              href="https://www.charts.gc.ca/charts-cartes/charts-cartes-eng.asp?num=3673"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Government of Canada chart listing for 3673</a
+            >
+            (scale 1:40,000 — check the listing for edition date and how to purchase).
+          </figcaption>
+        </figure>
       </section>
     </main>
 
@@ -375,82 +390,5 @@
       </div>
     </footer>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
-    <script>
-      (function () {
-        var tofinoCenter = [49.153, -125.905];
-        var map = L.map("map").setView([49.24, -125.95], 10);
-
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          maxZoom: 19,
-          attribution:
-            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-        }).addTo(map);
-
-        L.marker(tofinoCenter)
-          .addTo(map)
-          .bindPopup(
-            "<strong>Tofino / launch area</strong><br>Meet at Grice Park kayak launch (confirm parking). Savary Island Pie Company is nearby."
-          );
-
-        var vargasRing = [
-          [49.352, -125.982],
-          [49.345, -126.02],
-          [49.328, -126.055],
-          [49.305, -126.07],
-          [49.285, -126.065],
-          [49.272, -126.04],
-          [49.268, -126.01],
-          [49.278, -125.975],
-          [49.298, -125.955],
-          [49.322, -125.958],
-          [49.34, -125.968],
-          [49.352, -125.982],
-        ];
-
-        L.polygon(vargasRing, {
-          color: "#1a5c4a",
-          weight: 2,
-          fillColor: "#2a8f72",
-          fillOpacity: 0.2,
-        })
-          .addTo(map)
-          .bindPopup(
-            "<strong>Vargas Island (approx.)</strong><br>Actual camps and headlands differ. Follow your guide."
-          );
-
-        var routeLine = [
-          [49.15, -125.91],
-          [49.16, -125.93],
-          [49.2, -125.95],
-          [49.255, -125.97],
-          [49.3, -126.0],
-          [49.32, -126.04],
-          [49.31, -126.06],
-          [49.28, -126.07],
-          [49.25, -126.05],
-          [49.22, -126.02],
-          [49.19, -125.98],
-          [49.17, -125.94],
-          [49.15, -125.91],
-        ];
-
-        L.polyline(routeLine, { color: "#c45c26", weight: 3, opacity: 0.85 })
-          .addTo(map)
-          .bindPopup(
-            "<strong>Example circuit</strong><br>Not the real plan — weather, swell, and group ability decide each day."
-          );
-
-        map.fitBounds(L.latLngBounds(vargasRing).extend(tofinoCenter));
-
-        window.addEventListener("load", function () {
-          map.invalidateSize();
-        });
-      })();
-    </script>
   </body>
 </html>

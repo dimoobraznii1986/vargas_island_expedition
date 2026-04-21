@@ -18,10 +18,10 @@ git push -u origin main
 3. In the repo on GitHub: **Settings → Pages → Build and deployment → Source**: **Deploy from a branch**, branch **main**, folder **/ (root)**.
 4. After a minute, the site will be at `https://YOUR_USERNAME.github.io/vargas_island_expedition/`.
 
-Relative URLs (`styles.css`, Leaflet CDN) work at that subpath without extra configuration.
+Relative URLs (`styles.css`) work at that subpath without extra configuration.
 
 ## Contents
 
-Single page **`index.html`**: overview, resources, meeting and packing list, cancellation note, and an illustrative Leaflet map (not for navigation).
+Single page **`index.html`**: overview, resources, meeting and packing list, cancellation note, and an official **chart 3673** preview image from charts.gc.ca (still not a substitute for corrected navigation charts).
 
 Always confirm dates, fees, and safety with Norm Hann Expeditions.
